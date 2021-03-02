@@ -1,0 +1,74 @@
+body::after{
+    content: "";
+    background: linear-gradient(to right, #397362, #264D42);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 600px;
+    z-index: -1;
+}
+
+.back{
+    color: var(--Cor-mais-clara);
+    background-color: var(--Cor-de-fundo-escura);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 5px;
+    margin: 2rem;
+    cursor: pointer;
+}
+.back a{
+    color: var(--Cor-dos-icones);
+}
+
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+    margin-bottom: 2rem;
+
+}
+main .container{
+    z-index: 1;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 200px;
+    background-color: var(--Branco);
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 10px 12px 20px 5px rgba(0, 0, 0, 0.2);
+    color: var(--Cor-de-letra-escura);
+}
+
+
+.container .containerHeader{
+    display: flex;
+    padding: 5rem 5rem 2rem 5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+.container .containerHeader h2{
+    font: 700 3rem 'Open Sans', sans-serif;
+    margin-right: auto;
+}
+
+.containerBody{
+    padding: 2rem 5rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.containerBody p{
+    font: 400 2rem 'Opens Sans',sans-serif;
+}
+.containerBody h3{
+    font-size: 2rem;
+}
+.containerBody a{
+    color: var(--Cor-de-letra-escura);
+}

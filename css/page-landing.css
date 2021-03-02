@@ -1,0 +1,116 @@
+.page-landing header {
+    position: relative;
+    height: 100%;
+    background: url("../img/panoramic-shot-of-grassy-hills-and-mountains-near-water-under-a-blue-cloudy-sky-in-norway.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--Branco);
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s;
+    background-color: var(--Cor-de-fundo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bg-img:hover .overlay {
+    opacity: 0.9;
+}
+
+.overlay h1 {
+    color: var(--Branco);
+    font-size: 8rem;
+}
+
+.overlay nav {
+    color: var(--Branco);
+    font-size: 2rem;
+}
+
+.overlay nav a {
+    color: var(--Branco);
+    border: 1px solid var(--Branco);;
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.overlay nav a:hover {
+    background-color: #ddd;
+    color: #111;
+}
+
+
+
+main {
+    margin: 100px;
+    color: var(--Cor-de-letra-escura);
+}
+
+main h2 {
+    text-align: center;
+    font: 700 5rem 'Opens Sans', sans-serif;
+}
+
+main .grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+main .grid .col1{
+    overflow: hidden;
+}
+
+main .grid .col1 img {
+    width: 100%;
+    margin: 20px;
+
+}
+
+main .grid .col2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .grid .col2 p {
+    margin: 2rem;
+}
+
+main .grid .col2 a {
+    color: var(--Branco);
+    background: var(--Cor-de-fundo-escura);
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+main .grid .col2 a:hover {
+    background-color: var(--Cor-do-Botao-hover);
+}
+
+
+@media (max-width: 650px) {
+    main .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}

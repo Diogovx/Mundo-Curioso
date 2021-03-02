@@ -1,0 +1,139 @@
+body::after{
+    content: "";
+    background: linear-gradient(to right, #397362, #264D42);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 600px;
+    z-index: -1;
+}
+
+.back{
+    color: var(--Cor-mais-clara);
+    background-color: var(--Cor-de-fundo-escura);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 5px;
+    margin: 2rem;
+    cursor: pointer;
+}
+.back a{
+    color: var(--Cor-dos-icones);
+}
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+    margin-bottom: 2rem;
+
+}
+main .container{
+    z-index: 1;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 200px;
+    background-color: var(--Branco);
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 10px 12px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.container .containerHeader{
+    display: flex;
+    padding: 5rem 5rem 2rem 5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+.container .containerHeader h2{
+    font: 700 3rem 'Open Sans', sans-serif;
+    margin-right: auto;
+    color: var(--Cor-de-letra-escura);
+}
+
+
+.categoryBlock{
+    position: relative;
+    display: inline-block;
+}
+.categoryButton{
+    background-color: var(--Cor-de-fundo);
+    color: var(--Branco);
+    padding: 16px;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.categories {
+    display: none;
+    position: absolute;
+    background-color: var(--Branco);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.categories a {
+    color: var(--Preto);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+.categoryBlock:hover .categories {
+    display: block;
+}
+.categories a:hover{
+    background-color: #e8e8e8;
+}
+
+
+.containerBody{
+    padding: 2rem 5rem 5rem 5rem;
+    height: 85rem;
+    overflow-y: auto;
+}
+
+.containerBody .contentBlock{
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.containerBody .contentBlock p{
+    height: 5rem;
+    overflow-y: auto;
+}
+
+.containerBody .contentBlock:nth-child(odd){
+    background-color: var(--Cor-de-fundo);
+    color: var(--Branco);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.containerBody .contentBlock:nth-child(odd):hover{
+    background-color: var(--Cor-dos-artigos-claros);
+}
+
+.containerBody .contentBlock:nth-child(even){
+    background-color: var(--Cor-dos-artigos-escuros);
+    color: var(--Branco);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.containerBody .contentBlock:nth-child(even):hover{
+    background-color: var(--Cor-dos-artigos-e-fundo);
+}
+
