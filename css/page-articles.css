@@ -98,19 +98,18 @@ main .container{
     height: 85rem;
     overflow-y: auto;
 }
-
-.containerBody .contentBlock{
-    height: 18rem;
+.contentBlock{
+    height: 19rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.containerBody .contentBlock p{
+.contentBlock p{
     height: 5rem;
     overflow-y: auto;
 }
 
-.containerBody .contentBlock:nth-child(odd){
+.contentBlock:nth-child(odd){
     background-color: var(--Cor-de-fundo);
     color: var(--Branco);
     padding: 2rem;
@@ -119,11 +118,11 @@ main .container{
     cursor: pointer;
     transition: background-color 0.2s;
 }
-.containerBody .contentBlock:nth-child(odd):hover{
+.contentBlock:nth-child(odd):hover{
     background-color: var(--Cor-dos-artigos-claros);
 }
 
-.containerBody .contentBlock:nth-child(even){
+.contentBlock:nth-child(even){
     background-color: var(--Cor-dos-artigos-escuros);
     color: var(--Branco);
     padding: 2rem;
@@ -133,7 +132,7 @@ main .container{
     transition: background-color 0.2s;
 }
 
-.containerBody .contentBlock:nth-child(even):hover{
+.contentBlock:nth-child(even):hover{
     background-color: var(--Cor-dos-artigos-e-fundo);
 }
 

@@ -39,66 +39,20 @@ require '_config.php';
             </div>
 
             <div class="containerBody">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium ab iste quae! Tempore,
-                    exercitationem, aut perferendis incidunt quo vel mollitia sed ad sit ratione similique quam libero!
-                    Nam, amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus cupiditate labore
-                    quibusdam, blanditiis iure ad cum minus ea voluptas, officia soluta earum officiis ab odit iusto
-                    necessitatibus molestiae est. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sed,
-                    veritatis, perspiciatis debitis perferendis doloremque adipisci hic, rem aliquid in nemo illum
-                    minima maiores? Inventore alias maxime pariatur et hic.</p>
-                    <h3>Atribuições</h3>
-                    <a href='https://br.freepik.com/fotos/neve'>Neve foto criado por wirestock - br.freepik.com</a>
-                    <a href='https://br.freepik.com/fotos/arvore'>Árvore foto criado por wirestock - br.freepik.com</a>
+                <h3>Sobre o autor</h3>
+                <p>Meu nome é Diogo Velozo Xavier, tenho 17 anos, sou um estudante de TI e estou cursando o terceiro ano do ensino médio. <br>
+                Moro no Rio de Janeiro - Rio de Janeiro.
+                </p>
+                <h3>Sobre o site</h3>
+                <p>Este site é para projeto final de do curso de programação web do SENAC, foi desenvolvido com HTML5, CSS, JavaScript e PHP</p>
+                <h3>Atribuições</h3>
+                <a href='https://br.freepik.com/fotos/neve'>Neve foto criado por wirestock - br.freepik.com</a>
+                <a href='https://br.freepik.com/fotos/arvore'>Árvore foto criado por wirestock - br.freepik.com</a>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="center">
-            <div class="footerStart">
-                <span id="btnLG">Contato</span>
-                <span id="btnP">Privacidade</span>
-            </div>
-            <div class="footerSocial">
-                <a href=""><i class="fab fa-facebook"></i></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-discord"></i></a>
-            </div>
-            <div class="footerEnd">
-                <p>Diogo Velozo Xavier</p>
-                <p>Site de Teste</p>
-            </div>
-        </div>
-    </footer>
-
-    <form action="" class="modalForm">
-        <div class="modalBG" id="modal">
-            <div class="modalHeader">
-                <h2>Entre em contato</h2>
-                <i class="fas fa-times" id="close"></i>
-            </div>
-            <div class="modalBody">
-                <input type="text" name="name" placeholder="Nome" />
-                <input type="email" name="email" placeholder="Email" />
-                <textarea name="message" placeholder="Digite sua mensagem"></textarea>
-                <input type="submit" value="Enviar" />
-            </div>
-        </div>
-    </form>
-
-    <form action="" class="modalForm">
-        <div class="modalBG" id="modalP">
-            <div class="modalHeader">
-                <h2>Política de Privacidade</h2>
-                <i class="fas fa-times" id="closeP"></i>
-            </div>
-            <div class="modalBody">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quisquam possimus, iusto, in repudiandae nam vero aperiam distinctio quam iste, nulla esse voluptatem ratione veniam sequi recusandae inventore magni ex?</p>
-            </div>
-        </div>
-    </form>
-
-    <script src="js/global.js"></script>
+    <?php require "footer.php";?>
 
 
 </body>

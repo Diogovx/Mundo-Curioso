@@ -24,7 +24,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100vw;
 
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
@@ -55,7 +54,7 @@ footer {
     color: #eee;
     padding: 20px;
     text-align: center;
-    z-index: 2;
+    z-index: 0;
 }
 
 footer a,
@@ -192,6 +191,11 @@ footer .footerEnd {
 .modalForm textarea {
     height: 15rem;
     resize: none;
+}
+
+.msg small{
+    font-size: 0.8;
+    color: #b44;
 }
 
 @media (max-width: 720px){

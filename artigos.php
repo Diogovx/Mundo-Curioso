@@ -4,28 +4,31 @@ require '_config.php';
 
 $titulo = "Artigos";
 
-$idcat = (isset($_GET['c'])) ? intval($_GET['c']) : 0;
 
+
+
+$idcat = (isset($_GET['c'])) ? intval($_GET['c']) : 0;
 
 if ($idcat > 0) {
 
     $sql = <<<SQL
-    SELECT id_artigo, titulo, resumo, id_categoria, autor FROM artigos
+SELECT id_artigo, titulo, resumo, id_categoria, nome FROM artigos
     INNER JOIN art_cat ON artigo_id = id_artigo
     INNER JOIN categorias ON categoria_id = id_categoria
-    WHERE categoria_id = '{$idcat}' AND status = 'ativo' 
+WHERE categoria_id = '{$idcat}' AND status = 'ativo' 
     ORDER BY data DESC
 SQL;
 
 } else {
 
     $sql = "SELECT id_artigo, titulo, resumo FROM artigos WHERE status = 'ativo' ORDER BY data DESC";
+
 }
 
-// Executa a query
-$res = $conn->query($sql);
+$res = $con->query($sql);
 
 $artigos = '';
+
 
 if ($res->num_rows > 0) {
 
@@ -33,59 +36,45 @@ if ($res->num_rows > 0) {
 
         $artigos .= <<<HTML
 
-        <div class="contentBlock">
-            <h3>{$art['titulo']}</h3>
-            <p>{$art['resumo']}</p>
-        </div>
-HTML;
-    if ($idcat > 0) {
-        $titulo = "Artigos Recentes em \"{$art['nome']}\"";
-    }
-} // end while
+<div class="contentBlock">
 
-// Se não existem artigos
+    <h2>{$art['titulo']}</h2>
+    <p>{$art['resumo']}</p>
+    <a href="artigo.php?id={$art['id_artigo']}">Ler mais...</a>
+</div>
+HTML;
+
+        if ($idcat > 0) {
+            $titulo = "Artigos Recentes em \"{$art['nome']}\"";
+        }
+    }
+
 } else {
 
-$artigos = '<p class="center">Nenhum artigo encontrado!</p>';
-}
-
-
-
-// Acrescenta nome da categoria no titulo
-if ($idcat > 0) {
-    $titulo = "Artigos Recentes em \"{$art['nome']}\"";
-}
- // end while
-
-// Se não existem artigos
-else {
-
-$artigos = '<p class="center">Nenhum artigo encontrado!</p>';
+    $artigos = '<p class="center">Nenhum artigo encontrado!</p>';
 }
 
 $cattitulo = $titulo;
 
-///// Obtendo lista de Categorias /////
-
-// Query de consulta ao banco de dados
 $sql = "SELECT * FROM categorias ORDER BY nome";
 
 // Executa a query
-$res = $conn->query($sql);
+$res = $con->query($sql);
 
 // Declara variável que exibe as categorias
-$categorias = '<ul>';
-
+$categorias = '';
+$total = '';
 // Loop para obter cada registro do banco de dados
 while ($cat = $res->fetch_assoc()) {
 
     // Conta o total de artigos nesta categoria
     $sql2 = "SELECT id_art_cat FROM `art_cat` WHERE categoria_id = {$cat['id_categoria']}";
 
-    // DEBUG: print_r($sql2); echo "\n";
+    //print_r($sql2); echo "\n";
 
     // Executa aquery
-    $res2 = $conn->query($sql2);
+    $res2 = $con->query($sql2);
+
 
     // Total de artigos
     $total = $res2->num_rows;
@@ -94,16 +83,14 @@ while ($cat = $res->fetch_assoc()) {
     if($total > 0) {
         // Cria a lista de categorias usando HEREDOC
         $categorias .= <<<HTML
-        <a href="artigo.php?c={$cat['id_categoria']}">{$cat['nome']}</a>>
+        <a href="artigos.php?c={$cat['id_categoria']}">{$cat['nome']}</a>
 
 HTML;
     }
 }
 
-$categorias .= '</ul>';
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -145,56 +132,7 @@ $categorias .= '</ul>';
         </div>
     </main>
 
-    <footer>
-        <div class="center">
-            <div class="footerStart">
-                <span id="btnLG">Contato</span>
-                <span id="btnP">Privacidade</span>
-            </div>
-            <div class="footerSocial">
-                <a href=""><i class="fab fa-facebook"></i></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-discord"></i></a>
-            </div>
-            <div class="footerEnd">
-                <p>Diogo Velozo Xavier</p>
-                <p>Site de Teste</p>
-            </div>
-        </div>
-    </footer>
-
-    <form action="" class="modalForm">
-        <div class="modalBG" id="modal">
-            <div class="modalHeader">
-                <h2>Entre em contato</h2>
-                <i class="fas fa-times" id="close"></i>
-            </div>
-            <div class="modalBody">
-                <input type="text" name="name" placeholder="Nome" />
-                <input type="email" name="email" placeholder="Email" />
-                <textarea name="message" placeholder="Digite sua mensagem"></textarea>
-                <input type="submit" value="Enviar" />
-            </div>
-        </div>
-    </form>
-
-    <form action="" class="modalForm">
-        <div class="modalBG" id="modalP">
-            <div class="modalHeader">
-                <h2>Política de Privacidade</h2>
-                <i class="fas fa-times" id="closeP"></i>
-            </div>
-            <div class="modalBody">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quisquam possimus, iusto, in
-                    repudiandae nam vero aperiam distinctio quam iste, nulla esse voluptatem ratione veniam sequi
-                    recusandae inventore magni ex?</p>
-            </div>
-        </div>
-    </form>
-
-    <script src="js/global.js"></script>
-
-    <script src="js/artigos.js"></script>
+    <?php require 'footer.php';?>
 
 </body>
 
