@@ -58,30 +58,21 @@ $cattitulo = $titulo;
 
 $sql = "SELECT * FROM categorias ORDER BY nome";
 
-// Executa a query
 $res = $con->query($sql);
 
-// Declara variável que exibe as categorias
 $categorias = '';
 $total = '';
-// Loop para obter cada registro do banco de dados
 while ($cat = $res->fetch_assoc()) {
 
-    // Conta o total de artigos nesta categoria
     $sql2 = "SELECT id_art_cat FROM `art_cat` WHERE categoria_id = {$cat['id_categoria']}";
 
-    //print_r($sql2); echo "\n";
 
-    // Executa aquery
     $res2 = $con->query($sql2);
 
 
-    // Total de artigos
     $total = $res2->num_rows;
 
-    // Só exibe categoria se tiver artigo nela
     if($total > 0) {
-        // Cria a lista de categorias usando HEREDOC
         $categorias .= <<<HTML
         <a href="artigos.php?c={$cat['id_categoria']}">{$cat['nome']}</a>
 
@@ -117,7 +108,7 @@ HTML;
     <main>
         <div class="container">
             <div class="containerHeader">
-                <h2>Artigos</h2>
+                <h2><a href="/artigos.php">Artigos</a></h2>
                 <div name="categoria" id="categoria" class="categoryBlock">
                     <div class="categoryButton">Categorias</div>
                     <div class="categories">

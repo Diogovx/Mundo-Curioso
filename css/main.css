@@ -139,6 +139,8 @@ footer .footerEnd {
     padding: 20px;
     width: 50%;
     border-radius: 0 0 5px 5px;
+    overflow-y: auto;
+    max-height: 500px;
 }
 
 .modalForm input[type="text"],
@@ -191,6 +193,10 @@ footer .footerEnd {
 .modalForm textarea {
     height: 15rem;
     resize: none;
+}
+
+.modalBody a{
+    color: var(--Cor-de-letra-escura);
 }
 
 .msg small{

@@ -51,12 +51,14 @@ main .container{
     align-items: center;
     justify-content: flex-end;
 }
-.container .containerHeader h2{
+.container .containerHeader h2 {
     font: 700 3rem 'Open Sans', sans-serif;
     margin-right: auto;
     color: var(--Cor-de-letra-escura);
 }
-
+.containerHeader h2 a{
+    color: var(--Cor-de-letra-escura);
+}
 
 .categoryBlock{
     position: relative;

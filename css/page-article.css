@@ -126,10 +126,6 @@ main .container{
     color: var(--Preto);
 }
 
-.container2{
-    height: 300px;
-}
-
 @media (max-width: 720px){
     .containerBody img{
         width: 50rem;

@@ -25,7 +25,6 @@ WHERE artigo_id = '{$id}' ORDER BY nome
 SQL;
 $res = $con->query($sql);
 
-// Monta lista de categorias
 $categorias = '<strong>Categorias: </strong> ';
 while ($cat = $res->fetch_assoc()) {
     $categorias .= <<<HTML
@@ -92,20 +91,7 @@ $titulo = $art['titulo'];
         </div>
         </div>
 
-        <div class="container">
-            <div class="containerHeader">
-                <h2>Comentários</h2>
-            </div>
-            <div class="containerBody container2">
-                <form method="post" name="formcomentario" id="formcomentario">
-                    <div class="formDiv">
-                        <input type="text" name="txtNome" id="txtNome" placeholder="nome">
-                        <textarea name="txtComentario" id="txtComentario"></textarea>
-                        <input type="submit" name="btnSubmit" id="btnSubmit" value="Comentar">
-                    </div>
-                </form>
-            </div>
-        </div>
+        
 
     </main>
 
