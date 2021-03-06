@@ -2,10 +2,6 @@
 
 require '_config.php';
 
-
-
-
-
 ?>
 
 
@@ -41,7 +37,7 @@ require '_config.php';
 
     <main>
         <div class="center">
-            <h2>Lorem Ipsum</h2>
+            <h2>O nosso Mundo</h2>
             <div class="grid">
                 <div class="col1">
                     <img src="img/selective-focus-shot-toucan-standing-tree-branch.jpg" alt="">

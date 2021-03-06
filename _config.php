@@ -1,13 +1,12 @@
 <?php
 //header("Content-type: text/html; charset=utf-8");
 
-	$host = 'localhost';
+	$servidor = 'localhost';
 	$usuario = 'root';
 	$senha = '';
 	$banco = 'mundoc';
 
-
-	$con = new mysqli($host, $usuario, $senha, $banco);
+	$con = new mysqli($servidor, $usuario, $senha, $banco);
 
 
 	if(mysqli_connect_errno()){

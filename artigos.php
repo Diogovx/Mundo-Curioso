@@ -59,7 +59,7 @@ $cattitulo = $titulo;
 $sql = "SELECT * FROM categorias ORDER BY nome";
 
 $res = $con->query($sql);
-
+$cat = '';
 $categorias = '';
 $total = '';
 while ($cat = $res->fetch_assoc()) {
